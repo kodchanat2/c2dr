@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+node_modules/
+out/
+experiments/**/renders/
+*.mp4
+.DS_Store
+.venv-research/
+assets/bgm/**/*.mp3
+assets/bgm/**/*.wav
+assets/bgm/**/*.m4a
+docs/resource/
+docs/research/transcripts/
