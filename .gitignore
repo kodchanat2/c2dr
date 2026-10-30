@@ -3,7 +3,6 @@
 !.env.example
 node_modules/
 out/
-experiments/**/renders/
 *.mp4
 .DS_Store
 .venv-research/
@@ -12,3 +11,8 @@ assets/bgm/**/*.wav
 assets/bgm/**/*.m4a
 docs/resource/
 docs/research/transcripts/
+__pycache__/
+# experiments were research for building the skill; local only
+experiments/
+# clips are generated output (one per video); local only
+clips/

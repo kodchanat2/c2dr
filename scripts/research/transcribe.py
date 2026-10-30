@@ -1,15 +1,27 @@
 """Experimental: transcribe reference videos with word timestamps (not part of the skill)."""
 import json
+import subprocess
 import sys
 from pathlib import Path
 
+import numpy as np
 from faster_whisper import WhisperModel
 
 MODEL = "large-v3-turbo"
+SAMPLE_RATE = 16000
+
+
+def load_audio(video: Path) -> np.ndarray:
+    # Decode via ffmpeg CLI; the bundled PyAV decoder is incompatible with this faster-whisper version
+    pcm = subprocess.run(
+        ["ffmpeg", "-v", "error", "-i", str(video), "-ac", "1", "-ar", str(SAMPLE_RATE), "-f", "s16le", "-"],
+        check=True, capture_output=True,
+    ).stdout
+    return np.frombuffer(pcm, np.int16).astype(np.float32) / 32768.0
 
 
 def transcribe(model: WhisperModel, video: Path, out_dir: Path) -> None:
-    segments, info = model.transcribe(str(video), language="th", word_timestamps=True, vad_filter=True)
+    segments, info = model.transcribe(load_audio(video), language="th", word_timestamps=True, vad_filter=True)
     rows = [
         {
             "start": round(s.start, 2),

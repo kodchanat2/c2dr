@@ -1,0 +1,14 @@
+{
+  "//": "Base for clips/<slug>/tsconfig.json (written by scripts/new-clip.sh). Packages resolve from engine/node_modules.",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "typeRoots": ["./node_modules/@types"]
+  }
+}
