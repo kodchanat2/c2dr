@@ -12,4 +12,3 @@ rsync -a "$ROOT/engine/sample/public/models/" "$CLIP/public/models/"
 LOGO="$(node -e 'console.log(require(process.argv[1]).logo)' "$ROOT/config/brand.json")"
 cp "$ROOT/$LOGO" "$CLIP/public/brand/logo.svg"
 [[ -f "$CLIP/public/sfx/sting.wav" ]] || "$ROOT/scripts/sfx/generate-sfx.sh" "$CLIP/public/sfx" >/dev/null
-[[ -f "$CLIP/public/vo/vo.json" ]] || echo "warning: no VO yet; run scripts/tts/generate-vo.mjs $CLIP/shots.json $CLIP/public/vo" >&2

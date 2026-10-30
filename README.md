@@ -11,6 +11,13 @@ cd engine && npm install && cd ..   # ครั้งเดียวหลัง
 cp .env.example .env                # ใส่ GEMINI_API_KEY (ฟรีที่ aistudio.google.com/apikey)
 ```
 
+ติดตั้ง Remotion plugin ให้ Claude (รันใน terminal แล้ว restart Claude Code):
+
+```bash
+claude plugin marketplace add remotion-dev/claude-code-plugin
+claude plugin install remotion@remotion
+```
+
 ไม่บังคับ:
 - เพลงประกอบ: วางไฟล์ใน `assets/bgm/<mood>/` (`mystery` `horror` `funny` `epic` `chill` `tech`) ถ้าไม่มี คลิปจะไม่มีเพลง
 - ชื่อช่อง/โลโก้: แก้ `config/brand.json` และ `assets/brand/logo.svg`
