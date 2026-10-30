@@ -19,7 +19,7 @@ claude plugin install remotion@remotion
 ```
 
 ไม่บังคับ:
-- เพลงประกอบ: วางไฟล์ใน `assets/bgm/<mood>/` (`mystery` `horror` `funny` `epic` `chill` `tech`) ถ้าไม่มี คลิปจะไม่มีเพลง
+- เพลงประกอบ: branch `with_bgm` มีเพลงใน `assets/bgm/<mood>/` มาให้แล้ว 17 เพลง (`mystery` `horror` `funny` `epic` `chill` `tech`) เพิ่มเพลงเองได้ในโฟลเดอร์เดียวกัน
 - ชื่อช่อง/โลโก้: แก้ `config/brand.json` และ `assets/brand/logo.svg`
 
 ## ใช้งาน
